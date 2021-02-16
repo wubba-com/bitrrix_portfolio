@@ -89,41 +89,23 @@ use Bitrix\Main\Page\Asset;
                         </div>
                     </div>
 
-                    <!-- Меню (основное) -->
                     <div class="col-md-10 col-sm-9 col-xs-4 text-right dark-menu">
-                        <div class="header-main-menu hidden-xs">
-                            <nav id="primary-menu">
-                                <ul class="main-menu text-right">
-                                    <li>
-                                        <a href="index.html">Главная</a>
-                                    </li>
-                                    <li>
-                                        <a href="about_us.html">О нас</a>
-                                    </li>
-                                    <li>
-                                        <a href="services.html"> Услуги
-                                            <span class="indicator"><i class="fa fa-angle-down"></i></span></a>
-                                        <ul class="dropdown">
-                                            <li>
-                                                <a href="services_landing.html">Лендинг</a>
-                                            </li>
-                                            <li>
-                                                <a href="services_online_shop.html">Интернет-магазин</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="portfolio.html"> Портфолио</a>
-                                    </li>
-                                    <li>
-                                        <a href="blog.html">Блог</a>
-                                    </li>
-                                    <li>
-                                        <a href="contacts.html">Контакты</a>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
+                        <?$APPLICATION->IncludeComponent("bitrix:menu", "main_menu", Array(
+	"ALLOW_MULTI_SELECT" => "N",	// Разрешить несколько активных пунктов одновременно
+		"CHILD_MENU_TYPE" => "left",	// Тип меню для остальных уровней
+		"DELAY" => "N",	// Откладывать выполнение шаблона меню
+		"MAX_LEVEL" => "2",	// Уровень вложенности меню
+		"MENU_CACHE_GET_VARS" => array(	// Значимые переменные запроса
+			0 => "",
+		),
+		"MENU_CACHE_TIME" => "3600",	// Время кеширования (сек.)
+		"MENU_CACHE_TYPE" => "N",	// Тип кеширования
+		"MENU_CACHE_USE_GROUPS" => "Y",	// Учитывать права доступа
+		"ROOT_MENU_TYPE" => "top",	// Тип меню для первого уровня
+		"USE_EXT" => "N",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
+	),
+	false
+);?>
 
                         <!-- Поиск -->
                         <div class="header-right">
@@ -203,7 +185,7 @@ use Bitrix\Main\Page\Asset;
         <div class="row z-index">
             <div class="col-md-7 col-sm-6">
                 <div class="breadcrumb-title">
-                    <h2 class="white-text">О студии</h2>
+                    <h2 class="white-text"><?= $APPLICATION->ShowTitle(false); ?></h2>
                 </div>
             </div>
             <div class="col-md-5 col-sm-6">
