@@ -40,12 +40,12 @@ Note: This is Short code style file. All Short code related style included in th
 /*----------------------------------------*/
 /*  1.  Theme default CSS
 /*----------------------------------------*/
-@import url("css/animate.css");
+@import url("assets/css/animate.css");
 
 /* fonts */
 @font-face {
   font-family: Dosis; /* Гарнитура шрифта */
-  src: url(fonts/blogger-sans/Blogger_Sans.otf); /* Путь к файлу со шрифтом */
+  src: url(assets/fonts/blogger-sans/Blogger_Sans.otf); /* Путь к файлу со шрифтом */
 }
 
 html, body {height: 100%;}
@@ -156,43 +156,43 @@ body {font-family: 'Lato', sans-serif;color:#444;transition:.3s;line-height: 29p
   margin-top: 30px;
 }
 .bg-img {
-  background: rgba(0, 0, 0, 0) url("img/bg/bg1.jpg") repeat fixed center center / cover ;
+  background: rgba(0, 0, 0, 0) url("assets/img/bg/bg1.jpg") repeat fixed center center / cover ;
 }
 .bg-img-2 {
-  background: rgba(0, 0, 0, 0) url("img/bg/bg-2.jpg") repeat fixed center center / cover ;
+  background: rgba(0, 0, 0, 0) url("assets/img/bg/bg-2.jpg") repeat fixed center center / cover ;
 }
 .bg-img-3 {
-  background: rgba(0, 0, 0, 0) url("img/bg/bg-3.jpg") repeat scroll center center / cover ;
+  background: rgba(0, 0, 0, 0) url("assets/img/bg/bg-3.jpg") repeat scroll center center / cover ;
 }
 .bg-breadcrumb{
-  background: rgba(0, 0, 0, 0) url("img/bg/breadcamb.jpg") repeat scroll center center / cover ;
+  background: rgba(0, 0, 0, 0) url("assets/img/bg/breadcamb.jpg") repeat scroll center center / cover ;
 }
 .bg-breadcrumb-2{
-  background: rgba(0, 0, 0, 0) url("img/bg/breadcamb-2.jpg") repeat scroll center center / cover ;
+  background: rgba(0, 0, 0, 0) url("assets/img/bg/breadcamb-2.jpg") repeat scroll center center / cover ;
 }
 .bg-img-4{
-  background: rgba(0, 0, 0, 0) url("img/bg/bg-4.jpg") repeat scroll center center / cover ;
+  background: rgba(0, 0, 0, 0) url("assets/img/bg/bg-4.jpg") repeat scroll center center / cover ;
 }
 .bg-img-5 {
-  background: rgba(0, 0, 0, 0) url("img/bg/bg-5.jpg") repeat fixed center center / cover ;
+  background: rgba(0, 0, 0, 0) url("assets/img/bg/bg-5.jpg") repeat fixed center center / cover ;
 }
 .bg-img-6{
-  background: rgba(0, 0, 0, 0) url("img/bg/bg-6.jpg") repeat fixed center center / cover ;
+  background: rgba(0, 0, 0, 0) url("assets/img/bg/bg-6.jpg") repeat fixed center center / cover ;
 }
 .bg-img-7{
-  background: rgba(0, 0, 0, 0) url("img/bg/bg-7.jpg") repeat fixed center center / cover ;
+  background: rgba(0, 0, 0, 0) url("assets/img/bg/bg-7.jpg") repeat fixed center center / cover ;
 }
 .bg-img-8{
-  background: rgba(0, 0, 0, 0) url("img/slider/slider-1/bg.jpg") repeat fixed center center / cover ;
+  background: rgba(0, 0, 0, 0) url("assets/img/slider/slider-1/bg.jpg") repeat fixed center center / cover ;
 }
 .bg-img-9{
-  background: rgba(0, 0, 0, 0) url("img/bg/bg-9.jpg") repeat fixed center center / cover ;
+  background: rgba(0, 0, 0, 0) url("assets/img/bg/bg-9.jpg") repeat fixed center center / cover ;
 }
 .video-bg-img{
-  background: rgba(0, 0, 0, 0) url("img/bg/video-bg.jpg") repeat fixed center center / cover ;
+  background: rgba(0, 0, 0, 0) url("assets/img/bg/video-bg.jpg") repeat fixed center center / cover ;
 }
 .bg-test-img{
-  background: rgba(0, 0, 0, 0) url("img/bg/bg-test.jpg") repeat fixed center center / cover ;
+  background: rgba(0, 0, 0, 0) url("assets/img/bg/bg-test.jpg") repeat fixed center center / cover ;
 }
 .bg-100vh{height:100vh}
 /*------------- 2. who-area-are ---------------*/

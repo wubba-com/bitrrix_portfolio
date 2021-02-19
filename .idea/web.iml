@@ -4,6 +4,8 @@
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/bitrix" />
       <excludeFolder url="file://$MODULE_DIR$/upload" />
+      <excludeFolder url="file://$MODULE_DIR$/local/vendor/kint-php/kint" />
+      <excludeFolder url="file://$MODULE_DIR$/local/vendor/composer" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

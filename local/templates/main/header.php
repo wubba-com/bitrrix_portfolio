@@ -4,9 +4,7 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 use Bitrix\Main\Page\Asset;
 ?>
 <head>
-    <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><? $APPLICATION->ShowTitle(); ?></title>
 
@@ -14,15 +12,13 @@ use Bitrix\Main\Page\Asset;
 
     <!-- Шрифты -->
     <!-- google fonts -->
-    <?php
-    Asset::getInstance()->addString('<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">')
-    ?>
 
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
 
     <!-- modernizr js -->
     <script src="/local/templates/main/assets/js/vendor/modernizr-2.8.3.min.js"></script>
     <!-- Стили (CSS) -->
-    <?php
+<?php
     Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/assets/css/bootstrap.min.css');
     Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/assets/css/owl.carousel.css');
     Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/assets/css/animate-text.css');
@@ -34,7 +30,7 @@ use Bitrix\Main\Page\Asset;
     Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/assets/css/font-awesome.min.css');
     Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/style.css');
     Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/assets/css/css/responsive.css');
-    ?>
+//    ?>
     <?php $APPLICATION->ShowHead(); ?>
 </head>
 <body>
@@ -74,7 +70,7 @@ use Bitrix\Main\Page\Asset;
 </div>
 
 <!-- Шапка сайта (меню) -->
-<header id="sticky-header" class="header-area header-wrapper white-bg">
+<header id="sticky-header" class="header-area header-wrapper <?= ($APPLICATION->GetCurDir() === '/') ? 'transparent-header' :  'white-bg'; ?>">
     <!-- Меню (для десктопа) -->
     <div class="header-middle-area full-width">
         <div class="container">
@@ -136,49 +132,25 @@ use Bitrix\Main\Page\Asset;
     </div>
 
     <!-- Меню (для мобилки) -->
-    <div class="mobile-menu-area visible-xs">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="mobile-menu">
-                        <nav id="dropdown">
-                            <ul>
-                                <li>
-                                    <a href="index.html">Главная</a>
-                                </li>
-                                <li>
-                                    <a href="about_us.html">О нас</a>
-                                </li>
-                                <li>
-                                    <a href="services.html">Услуги</a>
-                                    <ul>
-                                        <li>
-                                            <a href="services_landing.html">Лендинг</a>
-                                        </li>
-                                        <li>
-                                            <a href="services_online_shop.html">Интернет-магазин</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="portfolio.html">Портфолио</a>
-                                </li>
-
-                                <li>
-                                    <a href="blog.html">Блог</a>
-                                </li>
-                                <li>
-                                    <a href="contacts.html">Контакты</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+                    <?$APPLICATION->IncludeComponent("bitrix:menu", "mobile_menu", Array(
+                        "ALLOW_MULTI_SELECT" => "N",	// Разрешить несколько активных пунктов одновременно
+                        "CHILD_MENU_TYPE" => "left",	// Тип меню для остальных уровней
+                        "DELAY" => "N",	// Откладывать выполнение шаблона меню
+                        "MAX_LEVEL" => "2",	// Уровень вложенности меню
+                        "MENU_CACHE_GET_VARS" => array(	// Значимые переменные запроса
+                            0 => "",
+                        ),
+                        "MENU_CACHE_TIME" => "3600",	// Время кеширования (сек.)
+                        "MENU_CACHE_TYPE" => "N",	// Тип кеширования
+                        "MENU_CACHE_USE_GROUPS" => "Y",	// Учитывать права доступа
+                        "ROOT_MENU_TYPE" => "mobile",	// Тип меню для первого уровня
+                        "USE_EXT" => "N",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
+                    ),
+                        false
+                    );?>
 </header>
-
+<?php
+if($APPLICATION->GetCurDir() !== '/') : ?>
 <!-- Хлебные крошки (навигация) -->
 <div class="breadcrumb-area brand-bg ptb-100">
     <div class="container width-100">
@@ -203,3 +175,4 @@ use Bitrix\Main\Page\Asset;
         </div>
     </div>
 </div>
+<?endif; ?>
