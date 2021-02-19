@@ -13,13 +13,28 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
                         <!-- Лого + текст -->
                         <div class="footer-logo">
                             <a href="#">
-                                <img src="/local/templates/main/assets/img/logo/logo-white.png" alt=""/>
+                                <?$APPLICATION->IncludeComponent(
+                                    "bitrix:main.include",
+                                    "",
+                                    Array(
+                                        "AREA_FILE_SHOW" => "file",
+                                        "AREA_FILE_SUFFIX" => "inc",
+                                        "EDIT_TEMPLATE" => "",
+                                        "PATH" => SITE_TEMPLATE_PATH . "/includes/footer_logo.php"
+                                    )
+                                );?>
                             </a>
                         </div>
-                        <p>Если вы похожи на большинство компаний, у вас нет маркетингового бюджета в миллион
-                            долларов<br>
-                            или своей команды разработки. Но это не значит, что у вас не может быть<br>
-                            сайта мирового класса. И мы вам в этом поможем!</p>
+                        <?$APPLICATION->IncludeComponent(
+                            "bitrix:main.include",
+                            "",
+                            Array(
+                                "AREA_FILE_SHOW" => "file",
+                                "AREA_FILE_SUFFIX" => "inc",
+                                "EDIT_TEMPLATE" => "",
+                                "PATH" => SITE_TEMPLATE_PATH . "/includes/footer_text.php"
+                            )
+                        );?>
 
                         <!-- Соц. сети -->
                         <div class="social-icon">
@@ -41,7 +56,16 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
             <div class="row">
                 <div class="col-lg-5 col-md-5 col-sm-12">
                     <div class="copyright white-text">
-                        <p>We Coders © 2018</p>
+                        <?$APPLICATION->IncludeComponent(
+                            "bitrix:main.include",
+                            "",
+                            Array(
+                                "AREA_FILE_SHOW" => "file",
+                                "AREA_FILE_SUFFIX" => "inc",
+                                "EDIT_TEMPLATE" => "",
+                                "PATH" => SITE_TEMPLATE_PATH . "/includes/footer_copyright.php"
+                            )
+                        );?>
                     </div>
                 </div>
 
