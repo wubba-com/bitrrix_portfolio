@@ -1,0 +1,1 @@
+<img src="/local/templates/main/assets/img/about/o_nas_text_block.jpg" alt=""/>
