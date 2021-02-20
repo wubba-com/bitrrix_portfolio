@@ -1,2 +1,1 @@
-<?php ?>
-<i class="fa fa-envelope"></i> admin@domain.com
+<?php ?> <a href="mailto:wsadmin@gmail.com">wsadmin@gmail.com</a>
