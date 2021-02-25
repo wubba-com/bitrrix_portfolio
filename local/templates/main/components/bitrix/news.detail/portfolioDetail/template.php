@@ -12,7 +12,7 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
-<?php //debug($arResult) ?>
+
 <?php if (!empty($arResult['ID'])) : ?>
 <div class="single-portfolio-area pt-90 pb-60">
     <div class="container">
@@ -55,8 +55,8 @@ $this->setFrameMode(true);
                     <?php foreach ($arResult['PROPERTIES']['photos'] as $photo): ?>
                         <div class="col-md-6 col-sm-4">
                             <div class="img-gallery hover-bg-opacity mb-30">
-                                <a class="image-link" href="<?= $photo['src']; ?>">
-                                    <img src="<?= $photo['src'] ?>" alt="" /></a>
+                                <a class="image-link" href="<?= $photo['SRC']; ?>">
+                                    <img src="<?= $photo['SRC'] ?>" alt="" /></a>
                             </div>
                         </div>
                     <?php endforeach; ?>
@@ -64,4 +64,9 @@ $this->setFrameMode(true);
             </div>
         </div>
     <?php endif; ?>
+<?else :?>
+// Если неправильный URL
+    <div>
+        <p style="color: red">Элемент не найден</p>
+    </div>
 <?endif;?>
