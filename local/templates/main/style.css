@@ -3204,10 +3204,15 @@ h2.letters b i{font-style:normal;}
   letter-spacing: 0.2em;
 }
 .team-text p{}
-.team-icon{}
+.team-icon{
+  display: flex;
+  justify-content: center;
+}
 .team-icon a {
   color: rgba(0, 0, 0, 0.4);
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   transition: all 0.27s cubic-bezier(0, 0, 0.58, 1) 0s;
   border: 1px solid #fff;
   height: 40px;

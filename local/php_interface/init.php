@@ -1,6 +1,6 @@
 <?php
 require __DIR__ . '/include/functions.php';
-
+include __DIR__ . "/classes/autoload.php";
 if(file_exists($_SERVER['DOCUMENT_ROOT'] . '/local/vendor/autoload.php')) {
     require_once $_SERVER['DOCUMENT_ROOT'] . '/local/vendor/autoload.php';
 }
