@@ -12,7 +12,6 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
-<?php //debug($arResult) ?>
 <?php if (!empty($arResult)) : ?>
 <section class="who-area-are pad-90" id="about_us">
     <div class="container">

@@ -150,8 +150,8 @@ use Bitrix\Main\Page\Asset;
                 <div class="row">
                     <!-- Логотип -->
                     <div class="col-md-2 col-sm-3 col-xs-8">
-                        <div class="logo ptb-22">
-                            <a href="index.html">
+                            <div class="logo ptb-22">
+                                <a href="index.html">
                                 <img src="/local/templates/main/assets/img/logo/logo.png" alt="main logo">
                             </a>
                         </div>
@@ -159,8 +159,8 @@ use Bitrix\Main\Page\Asset;
 
                     <div class="col-md-10 col-sm-9 col-xs-4 text-right dark-menu">
                         <?$APPLICATION->IncludeComponent("bitrix:menu", "main_menu", Array(
-	"ALLOW_MULTI_SELECT" => "N",	// Разрешить несколько активных пунктов одновременно
-		"CHILD_MENU_TYPE" => "left",	// Тип меню для остальных уровней
+	"ALLOW_MULTI_SELECT" => "Y",	// Разрешить несколько активных пунктов одновременно
+		"CHILD_MENU_TYPE" => "subtop",	// Тип меню для остальных уровней
 		"DELAY" => "N",	// Откладывать выполнение шаблона меню
 		"MAX_LEVEL" => "2",	// Уровень вложенности меню
 		"MENU_CACHE_GET_VARS" => array(	// Значимые переменные запроса
@@ -170,7 +170,7 @@ use Bitrix\Main\Page\Asset;
 		"MENU_CACHE_TYPE" => "N",	// Тип кеширования
 		"MENU_CACHE_USE_GROUPS" => "Y",	// Учитывать права доступа
 		"ROOT_MENU_TYPE" => "top",	// Тип меню для первого уровня
-		"USE_EXT" => "N",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
+		"USE_EXT" => "Y",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
 	),
 	false
 );?>
@@ -227,23 +227,18 @@ if($APPLICATION->GetCurDir() !== '/') : ?>
 <div class="breadcrumb-area brand-bg ptb-100">
     <div class="container width-100">
         <div class="row z-index">
-            <div class="col-md-7 col-sm-6">
+                <div class="col-md-7 col-sm-6">
                 <div class="breadcrumb-title">
                     <h2 class="white-text"><?= $APPLICATION->ShowTitle(false); ?></h2>
                 </div>
             </div>
-            <div class="col-md-5 col-sm-6">
-                <div class="breadcrumb-menu">
-                    <ol class="breadcrumb text-right">
-                        <li>
-                            <a href="index.html">Главная</a>
-                        </li>
-                        <li>
-                            <a href="#">О нас</a>
-                        </li>
-                    </ol>
-                </div>
-            </div>
+            <?$APPLICATION->IncludeComponent("bitrix:breadcrumb", "topNavigate", Array(
+	"PATH" => "",	// Путь, для которого будет построена навигационная цепочка (по умолчанию, текущий путь)
+		"SITE_ID" => "s1",	// Cайт (устанавливается в случае многосайтовой версии, когда DOCUMENT_ROOT у сайтов разный)
+		"START_FROM" => "0",	// Номер пункта, начиная с которого будет построена навигационная цепочка
+	),
+	false
+);?>
         </div>
     </div>
 </div>

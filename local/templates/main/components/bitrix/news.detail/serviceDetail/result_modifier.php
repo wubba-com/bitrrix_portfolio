@@ -14,4 +14,3 @@
 if(!empty($arResult['PROPERTIES']['step_developer_2']['VALUE'])) {
     $arResult['PROPERTIES']['step_developer_2']['LIST'] = Helper::getDictionaryProp($arResult['PROPERTIES']['step_developer_2']['USER_TYPE_SETTINGS']['TABLE_NAME']);
 }
-d($arResult['PROPERTIES']);

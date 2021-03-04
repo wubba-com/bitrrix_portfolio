@@ -112,7 +112,7 @@ $APPLICATION->SetTitle("О нас");
             "SET_META_DESCRIPTION" => "N",	// Устанавливать описание страницы
             "SET_LAST_MODIFIED" => "N",	// Устанавливать в заголовках ответа время модификации страницы
             "INCLUDE_IBLOCK_INTO_CHAIN" => "N",	// Включать инфоблок в цепочку навигации
-            "ADD_SECTIONS_CHAIN" => "N",	// Включать раздел в цепочку навигации
+            "ADD_SECTIONS_CHAIN" => "Y",	// Включать раздел в цепочку навигации
             "HIDE_LINK_WHEN_NO_DETAIL" => "N",	// Скрывать ссылку, если нет детального описания
             "PARENT_SECTION" => "",	// ID раздела
             "PARENT_SECTION_CODE" => "",	// Код раздела
