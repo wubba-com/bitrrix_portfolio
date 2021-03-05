@@ -12,7 +12,6 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
-
 <?php if (!empty($arResult['ITEMS'])) :?>
 <div id="Container">
     <?php foreach ($arResult['ITEMS'] as $arItem) : ?>

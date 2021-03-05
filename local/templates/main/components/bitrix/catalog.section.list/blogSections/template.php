@@ -12,17 +12,14 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
+
 <?php if (!empty($arResult['SECTIONS'])) : ?>
+<ul class="widget-cat">
+	<?php foreach ($arResult['SECTIONS'] as $arSection) : ?>
+	<li>
+		<a href="/blog/<?= $arSection['SECTION_PAGE_URL']; ?>"><?= $arSection['NAME']; ?></a>
+	</li>
+	<?endforeach; ?>
 
-<div class="col-lg-12">
-    <div class="portfolio-menu brand-filter text-center mb-70">
-        <div class="filter" data-filter="all">Все</div>
-
-        <?php foreach ($arResult['SECTIONS'] as $section) :?>
-            <div class="filter" data-filter=".<?= $section['CODE'] ? : ''; ?>"><?= $section['NAME'] ? : '';?></div>
-        <?endforeach; ?>
-
-    </div>
-</div>
-
+</ul>
 <?endif; ?>
