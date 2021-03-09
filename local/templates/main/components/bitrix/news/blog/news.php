@@ -79,10 +79,12 @@ $this->setFrameMode(true);
 
 				<!-- Поиск -->
 				<div class="widget mb-60">
-					<form class="search-form" action="#">
-						<input type="text" placeholder="Поиск" />
-						<button><i class="fa fa-search"></i></button>
-					</form>
+					<?$APPLICATION->IncludeComponent("bitrix:search.form", "searchForm", Array(
+						"PAGE" => "#SITE_DIR#search/index.php",	// Страница выдачи результатов поиска (доступен макрос 	#SITE_DIR#)
+						"USE_SUGGEST" => "Y",	// Показывать подсказку с поисковыми фразами
+					),
+					false
+					);?>
 				</div>
 
 				<!-- Категории -->
