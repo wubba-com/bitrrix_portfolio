@@ -51,4 +51,43 @@ $this->setFrameMode(true);
 
 	</div>
 </article>
+
+<!-- Форма для ввода комментария -->
+<div class="comments-form mt-40">
+    <div class="row">
+		<form action="/blog/add_form_result.php" method="post">
+		<?php bitrix_sessid_post(); ?>
+			<div class="col-md-6 mb-30">
+                <input type="text" name = "name" placeholder="Ваше имя"/>
+            </div>
+            <div class="col-md-6 mb-30">
+                <input type="email" name = "email" placeholder="Email"/>
+            </div>
+            <div class="col-md-12">
+            	<textarea name="message" cols="30" rows="3" placeholder="Комментарий"></textarea>
+				<input type="hidden" name="id_element" value="<?= $arResult["ID"]; ?>">
+				<input type="submit" name="send" class="btn btn-lg mt-30" value="Отправить"/>
+        	</div>
+        </form>
+    </div>
+</div>
+<br>
+
+<!-- Комментарии -->
+<!-- <h3 class="total-comments mb-30 pb-15">4 комментария</h3>
+    <ul class="media-list comment-list mt-30">
+
+    <!-- Коммент -->
+        <!-- <li class="media">
+            <div class="media-body">
+                <div class="comment-info">
+                    <h4 class="author-name">Алексей Потапов</h4>
+            	</div>
+            	<p>
+					Система управления содержимым веб-сайтов Битрикс (с 2007 года используется название "1С-Битрикс") выпущена как 	отчуждаемый от разработчиков продукт в 2002 году.
+            		30 мая 2018 года выпущена последняя на данный момент версия ядра под номером 18.0.0.
+				</p>
+            </div>
+        </li> -->
+    <!-- </ul> -->
 <?endif; ?>
